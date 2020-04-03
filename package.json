@@ -1,0 +1,19 @@
+{
+  "name": "testhotel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1",
+    "dotenv": "^8.2.0",
+    "hapi": "^18.1.0",
+    "pg": "^8.0.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.5"
+  }
+}
