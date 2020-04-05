@@ -3,6 +3,11 @@ To Create a migrations:
 npx sequelize-cli migration:generate --name nameMigrations
 ```
 
+To run migration to create DB
+```
+sequelize db:create --env production
+```
+
 to run migrations execute nexts command
 ```
  sequelize db:migrate --env production

@@ -1,0 +1,29 @@
+version: '2'
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: postgres
+  node:
+    build: .
+    depends_on: 
+      - postgres
+    links:
+      - postgres
+    image: testhotel
+    environment:
+      - NODE_ENV=production
+      - DB=guruHotel
+      - DB_HOST=postgres
+      - DB_PASS=123456
+      - DB_USER=postgres
+      - PORT=4001
+    command: sequelize db:create --env production
+    command: sequelize db:migrate --env production
+    command: sequelize-cli db:seed:all --env production
+    command: node index  
+    ports:
+      - "4001:4001"

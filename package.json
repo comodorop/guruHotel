@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "createdb": "sequelize db:create --env production",
+    "migration": "sequelize db:migrate --env production",
+    "seed": "npx sequelize-cli db:seed:all --env production",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",

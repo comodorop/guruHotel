@@ -18,9 +18,11 @@ async function getHotels(request, h){
       let lstInfoAll = await Promise.all(roomsPromises)
       return h.response({data: lstInfoAll, status: 200, length: lstInfo.length}).code(200)  
     } catch (error) {
+      console.log(error)
       return h.response({data: "There is a problem in the server"}).code(500)
     }
   } catch (error) {
+    console.log(error)
     return h.response({data: "There is a problem in the server"}).code(500)
   }
 }
